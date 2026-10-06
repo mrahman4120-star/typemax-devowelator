@@ -880,9 +880,10 @@ class DevowelatorApp:
         done = getattr(self, "p_correct", 0) + getattr(self, "p_wrong", 0)
         acc = (self.p_correct / done * 100) if done else 0
         wpm = 0
-        if getattr(self, "p_start", None) and self.p_correct:
+        if getattr(self, "p_start", None) and self.p_correct > 1:
             mins = (time.time() - self.p_start) / 60
-            wpm = self.p_correct / mins if mins > 0 else 0
+            # the clock starts when the first word lands, so that word isn't timed
+            wpm = (self.p_correct - 1) / mins if mins > 0 else 0
         self.stat_lbl.config(text=f"correct {getattr(self,'p_correct',0)}    "
                              f"wrong {getattr(self,'p_wrong',0)}    accuracy {acc:.0f}%    "
                              f"streak {getattr(self,'p_streak',0)}    {wpm:.0f} wpm")

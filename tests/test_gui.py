@@ -63,6 +63,14 @@ def main():
     check("t" in ct and len(ct) > 3, f"prefix suggestions show ({ct[:30]})")
     app._master_hook(ev("t", False))
     app._master_hook(ev("space", True)); app._master_hook(ev("space", False)); app._poll()
+    import time as _time
+    app.p_correct, app.p_wrong = 6, 0
+    app.p_start = _time.time() - 60          # first word landed a minute ago
+    app._update_stats()
+    check(app.stat_lbl.cget("text").endswith(" 5 wpm"),
+          f"wpm excludes the untimed first word ({app.stat_lbl.cget('text')})")
+    app.p_correct = 1; app._update_stats()
+    check(app.stat_lbl.cget("text").endswith(" 0 wpm"), "wpm is 0 after a single word")
     app._toggle_practice(); root.update()
     check(not app.practice_active and not app.enabled, "practice stops")
 
