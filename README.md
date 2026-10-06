@@ -12,6 +12,15 @@ the      -> th        order    -> ordr       through  -> thrgh
 example  -> exmpl     people   -> ppl        letter   -> lttr
 ```
 
+<p align="center">
+  <img src="docs/screenshot-type.png" width="420" alt="Type tab: the paper tape shows th → the, qck → quick, brwn → brown, and live suggestions for thr">
+  &nbsp;
+  <img src="docs/screenshot-practice.png" width="420" alt="Practice tab: target word 'been' with hint 'bn', 6 correct, 100% accuracy">
+</p>
+
+`fox` keeps its vowel because `fx` already belongs to the more common word *fix*.
+The live suggestions under the tape show which words start with the keys typed so far.
+
 ## Features
 
 - **~49,000-word library** built from English word-frequency data. When two words
