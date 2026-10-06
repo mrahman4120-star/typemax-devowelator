@@ -1,0 +1,15 @@
+# personal data: your own learned/edited chords
+user_chords.json
+
+# local development notes
+CONTEXT.md
+.claude/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+build/
+dist/
+*.spec

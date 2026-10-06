@@ -1,0 +1,22 @@
+# Word list for the chord library, most-frequent first.
+# One or more words per line, whitespace-separated. Edit freely, then re-run
+# generate_chords.py. Words shorter than 3 letters are skipped automatically.
+
+the be to of and in that have it for not on with he as you do at this but
+his by from they we say her she or an will my one all would there their what
+so up out if about who get which go me when make can like time no just him
+know take people into year your good some could them see other than then now
+look only come its over think also back after use two how our work first well
+way even new want because any these give day most us is are was were been has
+had said each many write long thing more did sound number water call down side
+find part place made live where little round man came show every boy under name
+very through form much great help line before turn cause same mean move right
+old too does tell three air play small end put home read hand large spell add
+land here must big high such follow act ask change went light kind need house
+picture try again animal point mother world near build self earth father head
+stand own page should country found answer school grow study still learn plant
+cover food four thought keep never last door between city tree since hard start
+might story while press close night real life north book carry took science eat
+room friend began idea fish mountain stop once base hear horse cut sure watch
+color face wood main enough plain girl usual young ready above ever list though
+feel talk bird soon body family music question knew paper together always
