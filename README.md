@@ -38,7 +38,7 @@ example  -> exmpl     people   -> ppl        letter   -> lttr
 ## Install and run
 
 ```bash
-git clone https://github.com/<your-username>/typemax-devowelator.git
+git clone https://github.com/mrahman4120-star/typemax-devowelator.git
 cd typemax-devowelator
 pip install -r requirements.txt
 pythonw typemax_devowelator.pyw
