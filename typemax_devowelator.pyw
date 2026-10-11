@@ -242,6 +242,7 @@ class ChordEngine:
             n = e.name
             is_letter = bool(n) and len(n) == 1 and n.isalpha()
             held = n.lower() if is_letter else n     # Shift-up may arrive before T-up as 't'
+            is_key = is_letter or (n == "'" and bool(self.order))   # can't: ' stays in the word
 
             if e.event_type == KEY_UP:
                 if held in self._down:
@@ -272,7 +273,7 @@ class ChordEngine:
                 self._commit(" ")
                 self._down.add("space")
                 return False
-            if is_letter:
+            if is_key:
                 if mod_held():
                     return True                     # let Ctrl/Alt shortcuts pass
                 if held in self._down:
@@ -299,9 +300,7 @@ class ChordEngine:
             if trailing and self.type_output:
                 keyboard.write(trailing, restore_state_after=False)
             return
-        keys = self._keys()
-        word = self.by_seq.get(tuple(keys))
-        typed = "".join(self.order)                 # as typed, case kept
+        keys, word, typed, tail = self._lookup()    # typed: as typed, case kept
         literal = typed.lower()
         if (word is None and self.dictionary_mode and self.type_output
                 and self._is_new_word(literal)):
@@ -315,7 +314,7 @@ class ChordEngine:
                 self.on_dict("suggest", literal, list(chord))
                 return
         if self.type_output:
-            keyboard.write((apply_case(word, typed) if word else typed) + trailing,
+            keyboard.write((apply_case(word, typed) + tail if word else typed) + trailing,
                            restore_state_after=False)
         self.report(keys, word)
         self.on_build([])
@@ -323,6 +322,24 @@ class ChordEngine:
 
     def _keys(self):
         return [k.lower() for k in self.order]
+
+    def _lookup(self):
+        """Resolve the stroke to (keys, word, typed, tail).
+
+        An apostrophe inside the stroke stays part of it, so a contraction typed
+        WITH its apostrophe matches no chord and is written exactly as typed. A
+        trailing apostrophe is a closing quote and rides along: thrgh' -> through'.
+        """
+        keys, typed = self._keys(), "".join(self.order)
+        word = self.by_seq.get(tuple(keys))
+        if word is None and keys and keys[-1] == "'":
+            core = len(keys)
+            while core and keys[core - 1] == "'":
+                core -= 1
+            word = self.by_seq.get(tuple(keys[:core])) if core else None
+            if word:
+                return keys, word, typed[:core], typed[core:]
+        return keys, word, typed, ""
 
     def _is_new_word(self, literal):
         return (len(literal) >= 3 and literal.isalpha()
@@ -336,6 +353,7 @@ class ChordEngine:
             n = e.name
             is_letter = bool(n) and len(n) == 1 and n.isalpha()
             held = n.lower() if is_letter else n     # Shift-up may arrive before T-up as 't'
+            is_key = is_letter or (n == "'" and bool(self.order))   # can't: ' stays in the word
 
             if e.event_type == KEY_UP:
                 if held in self._down:
@@ -364,7 +382,7 @@ class ChordEngine:
                 if mod_held():
                     return True
                 return self._commit_echo()
-            if is_letter:
+            if is_key:
                 if mod_held():
                     return True
                 self.order.append(n)            # counts duplicates and repeats
@@ -387,14 +405,12 @@ class ChordEngine:
     def _commit_echo(self):
         if not self.order:
             return True                          # nothing pending -> a normal space
-        keys = self._keys()
-        word = self.by_seq.get(tuple(keys))
-        typed = "".join(self.order)
+        keys, word, typed, tail = self._lookup()
         literal = typed.lower()
         if word:
             for _ in range(len(self.order)):     # erase the echoed letters
                 keyboard.send("backspace")
-            keyboard.write(apply_case(word, typed) + " ", restore_state_after=False)
+            keyboard.write(apply_case(word, typed) + tail + " ", restore_state_after=False)
             self.report(keys, word)
             self.on_build([]); self.order = []
             self._down.add("space")

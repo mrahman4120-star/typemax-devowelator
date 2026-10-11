@@ -10,6 +10,7 @@ the chord for a word is the word with its vowels left out.
 ```
 the      -> th        order    -> ordr       through  -> thrgh
 example  -> exmpl     people   -> ppl        letter   -> lttr
+don't    -> dnt       I'm      -> im         can't    -> cnt
 ```
 
 <p align="center">
@@ -28,6 +29,9 @@ The live suggestions under the tape show which words start with the keys typed s
   rarer one keeps a vowel until its chord is unique, so every word is reachable.
 - **Works in any app.** It uses a system-wide keyboard hook, so it works in
   Notepad, Word, browsers and so on. Ctrl/Alt shortcuts still work.
+- **Contractions without the apostrophe:** `dnt` → `don't`, `im` → `I'm`,
+  `yor` → `you're`. Spelling one without its apostrophe works too (`dont`, `youre`),
+  and typing one *with* the apostrophe is left exactly as you typed it.
 - **Capitals:** `Th` → `The`, `TH` → `THE`.
 - **Live suggestions** show which words start with the keys typed so far.
 - **Practice tab** with accuracy, streak and words-per-minute. Nothing you type
@@ -98,7 +102,7 @@ Your `user_chords.json` is never touched by regeneration.
 ## Tests
 
 ```bash
-python tests/test_engine.py    # chord rule, engine, dictionary, capitals, typo filter
+python tests/test_engine.py    # chord rule, engine, dictionary, capitals, contractions, typo filter
 python tests/test_gui.py       # headless GUI wiring
 python tests/test_launch.py    # real launch with live hooks (local only)
 ```
@@ -108,7 +112,9 @@ python tests/test_launch.py    # real launch with live hooks (local only)
 - Windows only.
 - To type into an app running as administrator, run Typemax Devowelator as administrator too.
 - If two words share a vowel-less form, the more common word always wins the short
-  chord. There is no pick-list yet.
+  chord. There is no pick-list yet. A few pairs share *every* letter, so the rarer
+  one doubles its last letter: `its` → `it's`, `itss` → `its`; `ill` → `I'll`,
+  `illl` → `ill`.
 - The `keyboard` package has not had a release since 2020. It works, but it is unmaintained.
 
 ## License

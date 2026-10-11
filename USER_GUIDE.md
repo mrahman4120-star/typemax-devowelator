@@ -59,6 +59,25 @@ Unknown words are typed **literally** (whatever letters you pressed + Space).
 **Capitals work.** Hold Shift on the first letter (`Th` → `The`), or type the whole
 chord in capitals / with Caps Lock (`TH` → `THE`).
 
+**Contractions — no apostrophe needed.** Same rule, ignoring the apostrophe; the
+word comes out with it:
+
+| you type | you get | | you type | you get |
+|----------|---------|-|----------|---------|
+| dnt | don't | | im | I'm |
+| cnt | can't | | yor | you're |
+| wont | won't | | lts | let's |
+| ddnt | didn't | | thts | that's |
+
+- Spelling it without the apostrophe also works: `dont`, `cant`, `youre`, `thats`.
+- Typing it **with** the apostrophe (`can't`) is left exactly as you typed it.
+- A few pairs share every letter, so the more common one gets the plain letters and
+  the other doubles its last letter: `its` → **it's**, `itss` → **its**; `ill` →
+  **I'll**, `illl` → **ill**. Prefer the other way round? Re-bind them in
+  **View / edit chords** (move one to a spare chord first, since two words can't
+  share keys).
+- Possessives (`world's`, `Sarah's`) aren't chords — type them as usual.
+
 ---
 
 ## 3. Live suggestions (great for learning)

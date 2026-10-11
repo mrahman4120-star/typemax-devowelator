@@ -347,9 +347,100 @@ def test_typo_filter():
     check(WRITES == ["nanklvn "], f"typo: still typed literally ({WRITES})")
 
 
+def test_contractions():
+    gspec = importlib.util.spec_from_file_location(
+        "generate_chords", APP.parent / "generate_chords.py")
+    gen = importlib.util.module_from_spec(gspec); gspec.loader.exec_module(gen)
+
+    for w, ok in [("don't", True), ("it's", True), ("i'm", True), ("o'clock", True),
+                  ("world's", False), ("n't", False), ("ya'll", False), ("rock'n'roll", False)]:
+        check(gen.is_contraction(w) is ok, f"contraction filter: {w} -> {ok}")
+    check(gen.display("i'm") == "I'm" and gen.display("don't") == "don't", "I-contractions capitalised")
+
+    # frequency order: it's beats its; were beats we're; can't beats the junk token cnt
+    built = gen.build(["it's", "its", "were", "we're", "can't", "cnt", "count"])
+    got = {}
+    for w, ch, alias in built:
+        got.setdefault(w, []).append("".join(ch))
+    for word, want, why in [("it's", ["its"], "it's owns its"),
+                            ("its", ["itss"], "twin its -> itss"),
+                            ("were", ["wr"], "were keeps wr"),
+                            ("we're", ["wer"], "we're never spells 'were'"),
+                            ("can't", ["cnt", "cant"], "can't = cnt + alias cant"),
+                            ("count", ["cont"], "count moves to cont")]:
+        check(got.get(word) == want, f"gen: {why} ({got.get(word)})")
+    check("cnt" not in got, "gen: junk token cnt loses to can't")
+
+    by, words, wk = mod.load_library()           # the shipped library
+    for chord, word in [("dnt", "don't"), ("dont", "don't"), ("cnt", "can't"), ("im", "I'm"),
+                        ("yor", "you're"), ("wont", "won't"), ("lts", "let's"), ("wer", "we're"),
+                        ("wr", "were"), ("lets", "lets")]:
+        check(by.get(tuple(chord)) == word, f"library: {chord} -> {word} (got {by.get(tuple(chord))})")
+    check(not any("'" in k for seq in by for k in seq), "library: no chord contains an apostrophe")
+    check("world's" not in wk, "library: possessives excluded")
+
+    lib = {tuple("dnt"): "don't", tuple("im"): "I'm", tuple("thrgh"): "through",
+           tuple("can"): "cane"}
+    reports = []
+
+    # ---- echo path ----
+    eng = mod.ChordEngine(lib, lambda k, w: reports.append((list(k), w)), lambda k: None)
+    eng.echo = True
+    SENDS.clear(); WRITES.clear()
+    for k in "dnt":
+        tap(eng, k)
+    space(eng)
+    check(WRITES == ["don't "] and SENDS == ["backspace"] * 3, f"echo: dnt -> don't ({WRITES})")
+
+    WRITES.clear(); tap(eng, "i"); tap(eng, "m"); space(eng)
+    check(WRITES == ["I'm "], f"echo: im -> I'm ({WRITES})")
+
+    SENDS.clear(); WRITES.clear()               # typed WITH the apostrophe: left exactly as typed
+    for k in "can":
+        tap(eng, k)
+    check(eng.on_event(ev("'", True)) is True, "echo: inner apostrophe shows (passes through)")
+    eng.on_event(ev("'", False)); tap(eng, "t")
+    r = eng.on_event(ev("space", True)); eng.on_event(ev("space", False))
+    check(r is True and WRITES == [] and SENDS == [], f"echo: can't typed in full untouched ({WRITES})")
+    check(reports[-1] == (["c", "a", "n", "'", "t"], None), f"echo: one stroke ({reports[-1]})")
+
+    SENDS.clear(); WRITES.clear()               # quotes around a chord
+    check(eng.on_event(ev("'", True)) is True and eng.order == [], "echo: leading quote not buffered")
+    eng.on_event(ev("'", False))
+    for k in "thrgh'":
+        tap(eng, k)
+    space(eng)
+    check(WRITES == ["through' "] and SENDS == ["backspace"] * 6,
+          f"echo: thrgh' -> through' ({WRITES}, {len(SENDS)} backspaces)")
+
+    # ---- non-echo path (also used by Practice) ----
+    eng2 = mod.ChordEngine(lib, lambda k, w: None, lambda k: None)
+    WRITES.clear()
+    for k in "dnt":
+        tap(eng2, k)
+    space(eng2)
+    check(WRITES == ["don't "], f"suppress: dnt -> don't ({WRITES})")
+
+    WRITES.clear()                              # regression: used to write "cane't"
+    for k in "can":
+        tap(eng2, k)
+    check(eng2.on_event(ev("'", True)) is False, "suppress: inner apostrophe buffered")
+    check(eng2.on_event(ev("'", False)) is False, "suppress: its key-up swallowed too")
+    tap(eng2, "t"); space(eng2)
+    check(WRITES == ["can't "], f"suppress: can't typed in full, not cane't ({WRITES})")
+
+    WRITES.clear()
+    for k in "Thrgh'":
+        tap(eng2, k)
+    space(eng2)
+    check(WRITES == ["Through' "], f"suppress: Thrgh' -> Through' ({WRITES})")
+    check(eng2._down == set(), f"suppress: nothing left held ({eng2._down})")
+
+
 def main():
     test_rule(); test_library(); test_engine(); test_rebind(); test_merge()
     test_dictionary(); test_echo(); test_echo_dict(); test_case(); test_typo_filter()
+    test_contractions()
     print(f"\n{'ALL PASS' if F == 0 else 'FAILURES'}:  {P} passed, {F} failed")
     return 1 if F else 0
 

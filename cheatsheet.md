@@ -1,6 +1,6 @@
 # Chord cheat sheet
 
-48797 chords. Type the letters in order, then SPACE.
+48799 words. Type the letters in order, then SPACE.
 (showing the 3000 most common; the rest follow the same rule)
 
 | word | chord |
@@ -36,6 +36,7 @@
 | were | wr |
 | who | wh |
 | had | hd |
+| it's | its |
 | their | thr |
 | there | ther |
 | her | hr |
@@ -48,12 +49,14 @@
 | new | nw |
 | people | ppl |
 | how | hw |
+| don't | dnt (or dont) |
 | some | sm |
 | also | als |
 | them | thm |
 | now | now |
 | other | othr |
-| its | its |
+| I'm | im |
+| its | itss |
 | our | our |
 | than | thn |
 | good | gd |
@@ -113,7 +116,9 @@
 | down | dwn |
 | great | grt |
 | through | thrgh |
+| you're | yor (or youre) |
 | last | lst |
+| that's | thts (or thats) |
 | while | whl |
 | best | bst |
 | such | sch |
@@ -124,6 +129,7 @@
 | look | lok |
 | something | smthng |
 | use | use |
+| can't | cnt (or cant) |
 | same | sam |
 | used | usd |
 | both | bth |
@@ -149,6 +155,7 @@
 | under | undr |
 | during | drng |
 | game | gm |
+| I've | iv (or ive) |
 | thing | thng |
 | give | gv |
 | house | hos |
@@ -159,6 +166,7 @@
 | each | ech |
 | without | wtht |
 | against | agnst |
+| didn't | ddnt (or didnt) |
 | end | end |
 | found | fond |
 | must | must |
@@ -190,6 +198,7 @@
 | company | cmpny |
 | doing | dng |
 | few | fw |
+| he's | hes |
 | let | let |
 | real | rl |
 | called | clld |
@@ -227,9 +236,11 @@
 | making | mkng |
 | point | pnt |
 | read | rd |
+| there's | thrs (or theres) |
 | told | tld |
 | yet | yt |
 | bad | bd |
+| doesn't | dsnt (or doesnt) |
 | four | for |
 | hard | hrd |
 | mean | men |
@@ -277,6 +288,7 @@
 | children | chldrn |
 | everyone | evryn |
 | general | gnrl |
+| they're | thyr (or theyre) |
 | trying | tryng |
 | united | untd |
 | using | usng |
@@ -310,6 +322,7 @@
 | book | bk |
 | early | erly |
 | friends | frnds |
+| I'll | ill |
 | information | infrmtn |
 | local | lcl |
 | post | pst |
@@ -326,6 +339,7 @@
 | guys | gys |
 | half | hlf |
 | hand | hnd |
+| isn't | isnt |
 | level | lvl |
 | mind | mnd |
 | often | oftn |
@@ -343,6 +357,7 @@
 | problem | prblm |
 | south | sth |
 | true | tr |
+| we're | wer |
 | almost | almst |
 | fuck | fck |
 | history | hstry |
@@ -380,7 +395,8 @@
 | class | clss |
 | close | cls |
 | comes | cms |
-| idea | id |
+| I'd | id |
+| idea | ide |
 | international | intrntnl |
 | looks | lks |
 | past | past |
@@ -406,6 +422,7 @@
 | saw | sw |
 | special | spcl |
 | watch | wtch |
+| won't | wont |
 | either | ethr |
 | fucking | fckng |
 | future | ftr |
@@ -475,6 +492,7 @@
 | ready | rdy |
 | sometimes | smtms |
 | street | stret |
+| wasn't | wsnt (or wasnt) |
 | bring | brng |
 | college | cllg |
 | current | crrnt |
@@ -490,6 +508,7 @@
 | father | fthr |
 | march | mrch |
 | process | prcss |
+| she's | shs (or shes) |
 | song | sng |
 | study | stdy |
 | word | wrd |
@@ -548,6 +567,7 @@
 | shot | shot |
 | site | sit |
 | strong | strng |
+| you'll | yll (or youll) |
 | account | accnt |
 | especially | espclly |
 | eyes | eys |
@@ -573,6 +593,7 @@
 | personal | prsnl |
 | security | scrty |
 | share | shr |
+| what's | whts (or whats) |
 | won | won |
 | april | aprl |
 | center | cntr |
@@ -611,6 +632,7 @@
 | takes | tks |
 | training | trnng |
 | wish | wsh |
+| wouldn't | wldnt (or wouldnt) |
 | answer | answr |
 | boy | boy |
 | design | dsgn |
@@ -635,6 +657,7 @@
 | east | est |
 | hands | hnds |
 | hot | hot |
+| let's | lts |
 | longer | lngr |
 | medical | mdcl |
 | movie | mov |
@@ -700,6 +723,7 @@
 | size | sz |
 | step | step |
 | trust | trst |
+| you've | yv (or youve) |
 | central | centrl |
 | changes | chngs |
 | england | englnd |
@@ -724,6 +748,7 @@
 | cup | cp |
 | football | ftbll |
 | hate | hat |
+| haven't | hvnt (or havent) |
 | james | jms |
 | led | led |
 | looked | lkd |
@@ -758,6 +783,7 @@
 | article | artcl |
 | attack | attck |
 | born | brn |
+| couldn't | cldnt (or couldnt) |
 | damn | dmn |
 | decided | dcdd |
 | decision | dcsn |
@@ -851,6 +877,7 @@
 | waiting | wtng |
 | ways | wys |
 | access | accss |
+| aren't | arnt (or arent) |
 | base | bs |
 | below | blw |
 | created | crtd |
@@ -891,6 +918,7 @@
 | visit | vst |
 | wall | wall |
 | wanna | wnn |
+| we've | wv (or weve) |
 | wrote | wrt |
 | allowed | allwd |
 | boys | bys |
@@ -1191,7 +1219,7 @@
 | spring | sprng |
 | sunday | sndy |
 | telling | tllng |
-| wear | wer |
+| wear | wear |
 | activities | actvts |
 | address | addrss |
 | analysis | anlyss |
@@ -1209,6 +1237,7 @@
 | easily | esly |
 | finish | fnsh |
 | grand | grand |
+| here's | hers (or heres) |
 | increased | incrsd |
 | indian | indn |
 | literally | ltrlly |
@@ -1278,10 +1307,12 @@
 | smith | smth |
 | spot | spt |
 | texas | txs |
+| we'll | welll |
 | winter | wntr |
 | worse | wrs |
 | advice | advc |
 | agreement | agrmnt |
+| ain't | aint |
 | award | awrd |
 | block | block |
 | broken | brkn |
@@ -1296,7 +1327,7 @@
 | holy | hly |
 | killing | kllng |
 | lived | livd |
-| lots | lts |
+| lots | lots |
 | nation | ntn |
 | otherwise | othrws |
 | peter | ptr |
@@ -1408,6 +1439,7 @@
 | tree | tre |
 | types | typs |
 | wearing | werng |
+| who's | whos |
 | whom | whm |
 | wonderful | wndrfl |
 | agreed | agrd |
@@ -1449,7 +1481,7 @@
 | becomes | bcms |
 | brand | brnd |
 | bus | bus |
-| cent | cnt |
+| cent | cent |
 | chicago | chcg |
 | count | cont |
 | covered | cvrd |
@@ -1481,6 +1513,7 @@
 | twitter | twttr |
 | views | vws |
 | wedding | wddng |
+| you'd | yd (or youd) |
 | acting | actng |
 | actions | actns |
 | african | afrcn |
@@ -1511,6 +1544,7 @@
 | seat | set |
 | seemed | smd |
 | sexual | sxl |
+| shouldn't | shldnt (or shouldnt) |
 | target | trgt |
 | understanding | undrstndng |
 | village | vllg |
@@ -1690,6 +1724,7 @@
 | owned | ownd |
 | request | rqst |
 | stick | stick |
+| they've | thyv (or theyve) |
 | turns | trns |
 | vehicle | vhcl |
 | volume | vlm |
@@ -1741,7 +1776,6 @@
 | bigger | bggr |
 | breaking | brkng |
 | discovered | dscvrd |
-| dont | dnt |
 | dry | dry |
 | edge | edg |
 | evil | evl |
@@ -1831,7 +1865,7 @@
 | harry | hrry |
 | hello | hell |
 | houses | hss |
-| ill | ill |
+| ill | illl |
 | initial | intl |
 | introduced | intrdcd |
 | johnson | jhnsn |
@@ -1884,6 +1918,7 @@
 | feelings | flngs |
 | flying | flyng |
 | governor | gvrnr |
+| hasn't | hsnt (or hasnt) |
 | hundred | hndrd |
 | industrial | indstrl |
 | joint | jnt |
@@ -1904,6 +1939,7 @@
 | steve | stv |
 | supporting | spprtng |
 | terrible | trrbl |
+| they'll | thyll (or theyll) |
 | tired | tird |
 | treated | trtd |
 | turning | turnng |
@@ -2016,6 +2052,7 @@
 | surprised | srprsd |
 | taught | tght |
 | transport | trnsprt |
+| weren't | wrnt (or werent) |
 | accepted | accptd |
 | adding | addng |
 | affairs | affrs |
@@ -2055,7 +2092,7 @@
 | saved | svd |
 | schedule | schdl |
 | scientific | scntfc |
-| shoes | shs |
+| shoes | shos |
 | smoke | smk |
 | squad | sqd |
 | teach | teach |
@@ -2288,7 +2325,7 @@
 | voted | vtd |
 | voting | vtng |
 | walls | wlls |
-| wave | wv |
+| wave | wav |
 | alcohol | alchl |
 | assembly | assmbly |
 | breakfast | brkfst |
@@ -2446,6 +2483,7 @@
 | heaven | hvn |
 | independence | indpndnc |
 | institutions | instttns |
+| it'll | itll |
 | jackson | jcksn |
 | kiss | kss |
 | load | lod |
@@ -2487,6 +2525,7 @@
 | favourite | favrt |
 | fruit | frt |
 | harder | hrdr |
+| he'd | hedd |
 | index | indx |
 | item | itm |
 | lane | lan |
@@ -2644,6 +2683,7 @@
 | empire | empr |
 | exciting | exctng |
 | expansion | expnsn |
+| he'll | helll |
 | heavily | hvly |
 | hide | hid |
 | incident | incdnt |
@@ -2767,7 +2807,6 @@
 | suffered | sffrd |
 | survive | srvv |
 | tall | tall |
-| thats | thts |
 | theatre | thtr |
 | therapy | thrpy |
 | witness | wtnss |
@@ -2966,42 +3005,3 @@
 | pocket | pckt |
 | practical | prctcl |
 | primarily | prmrly |
-| proved | provd |
-| rape | rp |
-| regardless | rgrdlss |
-| relative | rltv |
-| represents | rprsnts |
-| rescue | rsc |
-| resulting | rsltng |
-| rush | rsh |
-| sarah | srh |
-| sessions | sssns |
-| sharp | shrp |
-| simon | simn |
-| soccer | sccr |
-| stable | stbl |
-| structures | strctrs |
-| supplies | sppls |
-| symptoms | symptms |
-| temporary | tmprry |
-| tested | tstd |
-| trick | trick |
-| attended | attndd |
-| audio | aud |
-| bone | bon |
-| brian | brin |
-| bullshit | bllsht |
-| chamber | chmbr |
-| chart | chrt |
-| circuit | crct |
-| clothing | clthng |
-| complicated | cmplctd |
-| confused | cnfsd |
-| consequences | cnsqncs |
-| defend | defnd |
-| divided | dvdd |
-| elizabeth | elzbth |
-| everyday | evrydy |
-| extent | extnt |
-| fishing | fshng |
-| format | frmt |

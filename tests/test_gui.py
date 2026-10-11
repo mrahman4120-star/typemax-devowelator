@@ -167,6 +167,29 @@ def main():
         try: os.remove(tmp4)
         except OSError: pass
 
+    # ---- swapping a twin pair (its / it's) with three re-binds, as the guide says ----
+    real_user5 = mod.USER_FILE
+    tmp5 = Path(tempfile.gettempdir()) / "user_swap.json"
+    tmp5.write_text("{}", encoding="utf-8")
+    try:
+        mod.USER_FILE = tmp5
+        app._reload_library()
+        check(app.by_seq.get(tuple("its")) == "it's" and app.word_keys.get("its") == tuple("itss"),
+              "twins start as its -> it's, itss -> its")
+        steps = [("its", tuple("itsz")), ("it's", tuple("itss")), ("its", tuple("its"))]
+        oks = [app._apply_rebind(w, k)[0] for w, k in steps]
+        check(all(oks), f"swap: all three re-binds accepted ({oks})")
+        check(app.by_seq.get(tuple("its")) == "its" and app.by_seq.get(tuple("itss")) == "it's",
+              f"swap: its -> its, itss -> it's ({app.by_seq.get(tuple('its'))})")
+        check(app.word_keys.get("its") == tuple("its") and app.word_keys.get("it's") == tuple("itss"),
+              "swap: word -> chord map agrees")
+        check(tuple("itsz") not in app.by_seq, "swap: temporary chord released")
+    finally:
+        mod.USER_FILE = real_user5
+        app._reload_library()
+        try: os.remove(tmp5)
+        except OSError: pass
+
     # ---- echo mode: keys visible, replaced with the word on Space ----
     SENDS.clear(); WRITES.clear()
     app.echo_var.set(True); app._toggle_echo()

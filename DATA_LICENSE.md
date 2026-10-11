@@ -15,9 +15,11 @@ wordfreq is itself built from several upstream corpora; see the wordfreq README
 for the full list of sources and their attributions.
 
 **Changes made:** `generate_chords.py` took the most frequent English words from
-wordfreq, kept only alphabetic words of three or more letters, cut the list to
-about 50,000 words, and turned each word into a vowel-dropped key sequence
-("chord"). The ordering of the files reflects wordfreq's frequency ranking.
+wordfreq, kept alphabetic words of three or more letters plus common contractions
+(possessives such as "world's" were dropped, and apostrophe-less misspellings such
+as "dont" were folded into their contraction), cut the list to about 50,000 words,
+and turned each word into a vowel-dropped key sequence ("chord"). The ordering of
+the files reflects wordfreq's frequency ranking.
 
 Accordingly, `chords.json` and `cheatsheet.md` are licensed under **CC BY-SA 4.0**.
 If you redistribute them or works adapted from them, you must give appropriate
